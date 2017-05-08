@@ -1,0 +1,9 @@
+{
+  "name": "ble-wifi-connector",
+  "version": "1.0.0-alpha.1",
+  "description": "Connect your raspberry pi to wifi via ble",
+  "main": "index.js",
+  "repository": "https://github.com/xouabita/pi-ble-wifi-connector.git",
+  "author": "xouabita",
+  "license": "MIT"
+}
