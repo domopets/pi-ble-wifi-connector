@@ -7,6 +7,7 @@
   "author": "xouabita",
   "license": "MIT",
   "dependencies": {
-    "bleno": "^0.4.2"
+    "bleno": "^0.4.2",
+    "node-wifi": "^1.2.4"
   }
 }

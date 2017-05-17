@@ -1,12 +1,11 @@
 const bleno = require('bleno')
-const EchoCharacteristic = require('./lib/EchoCharacteristic')
-const {PrimaryService} = bleno
+const WifiReaderService = require('./lib/WifiReaderService')
 
 bleno.on('stateChange', state => {
   console.log('on -> stateChange: ' + state)
 
   if (state == 'poweredOn') {
-    bleno.startAdvertising('pi echo', ['ec00'])
+    bleno.startAdvertising('raspberry', [WifiReaderService.uuid])
   } else {
     bleno.stopAdvertising()
   }
@@ -18,12 +17,5 @@ bleno.on('advertisingStart', err => {
   if (err)
     return
 
-  bleno.setServices([
-    new PrimaryService({
-      uuid: 'ec00',
-      characteristics: [
-        new EchoCharacteristic()
-      ]
-    })
-  ])
+  bleno.setServices([new WifiReaderService()])
 })
