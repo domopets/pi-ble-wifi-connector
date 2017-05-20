@@ -1,11 +1,12 @@
 const bleno = require('bleno')
 const WifiReaderService = require('./lib/WifiReaderService')
+const WifiConnectorService = require('./lib/WifiConnectorService')
 
 bleno.on('stateChange', state => {
   console.log('on -> stateChange: ' + state)
 
   if (state == 'poweredOn') {
-    bleno.startAdvertising('raspberry', [WifiReaderService.uuid])
+    bleno.startAdvertising('Led On/Off', [WifiReaderService.uuid])
   } else {
     bleno.stopAdvertising()
   }
@@ -17,5 +18,8 @@ bleno.on('advertisingStart', err => {
   if (err)
     return
 
-  bleno.setServices([new WifiReaderService()])
+  bleno.setServices([
+    new WifiReaderService(),
+    new WifiConnectorService(),
+  ])
 })
