@@ -17,3 +17,6 @@ SyslogIdentifier=BleWifiConnector
 StandardOutput=syslog
 Restart=on-failure
 KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target
