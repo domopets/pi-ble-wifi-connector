@@ -1,0 +1,19 @@
+# Copy this file to /etc/systemd/system/BleWifiConnector.service and then
+#     sudo systemctl start BleWifiConnector.service
+# and to start on boot:
+#     sudo systemctl enable BleWifiConnector.service
+# To consult the log : sudo journalctl -u BleWifiConnector
+
+[Unit]
+Description=Provision wifi via BLE
+
+[Service]
+ExecStart=/home/pi/pi-ble-wifi-connector/start.sh
+WorkingDirectory=/home/pi/pi-ble-wifi-connector
+User=pi
+Group=daemon
+Nice=10
+SyslogIdentifier=BleWifiConnector
+StandardOutput=syslog
+Restart=on-failure
+KillSignal=SIGINT
