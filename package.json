@@ -8,6 +8,6 @@
   "license": "MIT",
   "dependencies": {
     "bleno": "^0.4.2",
-    "node-wifi": "^1.2.4"
+    "execa": "^0.8.0"
   }
 }
