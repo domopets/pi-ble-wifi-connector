@@ -10,7 +10,7 @@ Description=Provision wifi via BLE
 [Service]
 ExecStart=/home/pi/pi-ble-wifi-connector/start.sh
 WorkingDirectory=/home/pi/pi-ble-wifi-connector
-User=pi
+User=root
 Group=daemon
 Nice=10
 SyslogIdentifier=BleWifiConnector
