@@ -6,7 +6,7 @@ bleno.on("stateChange", state => {
   console.log("on -> stateChange: " + state)
 
   if (state == "poweredOn") {
-    bleno.startAdvertising(process.env.BLE_NAME, [WifiReaderService.uuid])
+    bleno.startAdvertising(require("os").hostname(), [WifiReaderService.uuid])
   } else {
     bleno.stopAdvertising()
   }
